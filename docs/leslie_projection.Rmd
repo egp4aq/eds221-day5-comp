@@ -56,7 +56,7 @@ proj_year[1, ] <- fish_year0
 
 # The for loop below...
 for (i in 2:length(time_yr)) {
-  proj_year[i,] <- fish_leslie %*% proj_year[i-1,]
+  proj_year[i,] <- fish_leslie %*% proj_year[i-1,] # %*% is the dot product
 } # we use i-1 because we are doing the dot product of one row with the previous year
 
 
