@@ -1,6 +1,8 @@
 ---
 title: "The Leslie Matrix - revisited"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -55,7 +57,7 @@ proj_year[1, ] <- fish_year0
 # The for loop below...
 for (i in 2:length(time_yr)) {
   proj_year[i,] <- fish_leslie %*% proj_year[i-1,]
-}
+} # we use i-1 because we are doing the dot product of one row with the previous year
 
 
 # The rest is wrangling & visualization (run to check it out):
